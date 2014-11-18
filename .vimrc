@@ -32,3 +32,28 @@ nmap <silent> <C-n>	 :update<CR>:bn<CR>
 imap <silent> <C-n> <ESC>:update<CR>:bn<CR>
 vmap <silent> <C-n> <ESC>:update<CR>:bn<CR>
 cmap <silent> <C-n> <ESC>:update<CR>:bn<CR>
+
+"---------------------------
+" Start Neobundle Settings.
+"---------------------------
+" set dir for neobundle
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+
+" Required:
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" add bundles from here"
+NeoBundle "sudar/vim-arduino-syntax"
+
+call neobundle#end()
+
+" Required:
+filetype plugin indent on
+
+NeoBundleCheck
+
+"-------------------------
+" End Neobundle Settings.
+"-------------------------

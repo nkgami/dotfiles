@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/nkgami/elab/M1/chiba/java_b'
+let g:netrw_dirhist_2='/home/nkgami/memo'
+let g:netrw_dirhist_3='/home/nkgami/Downloads'
+let g:netrw_dirhist_4='/home/nkgami/memo'
+let g:netrw_dirhist_5='/home/nkgami/.ssh'
+let g:netrw_dirhist_6='/home/nkgami/temp'
+let g:netrw_dirhist_7='/home/nkgami/scripts'
+let g:netrw_dirhist_8='/home/nkgami/memo'
+let g:netrw_dirhist_9='/home/nkgami/elab/M1/ip_485_gw'
