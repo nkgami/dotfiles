@@ -33,8 +33,9 @@ imap <silent> <C-n> <ESC>:update<CR>:bn<CR>
 vmap <silent> <C-n> <ESC>:update<CR>:bn<CR>
 cmap <silent> <C-n> <ESC>:update<CR>:bn<CR>
 
-set list
-set listchars=tab:>-,trail:-,extends:>,precedes:<,nbsp:%
+"set colorcolumn=80
+"set list
+"set listchars=tab:>-,trail:-,extends:>,precedes:<,nbsp:%
 
 "---------------------------
 " Start Neobundle Settings.
@@ -49,14 +50,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " add bundles from here"
 NeoBundle "sudar/vim-arduino-syntax"
-" solarized
-NeoBundle 'altercation/vim-colors-solarized'
-" mustang
-NeoBundle 'croaker/mustang-vim'
-" jellybeans
-NeoBundle 'nanotech/jellybeans.vim'
-" molokai
-NeoBundle 'tomasr/molokai'
 
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'ujihisa/unite-colorscheme'
@@ -64,6 +57,7 @@ NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'bronson/vim-trailing-whitespace'
+NeoBundle 'Yggdroot/indentLine'
 
 call neobundle#end()
 
@@ -76,16 +70,19 @@ NeoBundleCheck
 " End Neobundle Settings.
 "-------------------------
 
-"colorscheme default
-if &term =~ "xterm-256color" || "screen-256color"
-	set t_Co=256
-	set t_Sf=[3%dm
-	set t_Sb=[4%dm
-elseif &term =~ "xterm-color"
-	set t_Co=8
-	set t_Sf=[3%dm
-	set t_Sb=[4%dm
-endif
-
 "syntax enable
 "hi PmenuSel cterm=reverse ctermfg=33 ctermbg=222 gui=reverse guifg=#3399ff guibg=#f0e68c
+
+function! JISX0208SpaceHilight()
+    syntax match JISX0208Space "　" display containedin=ALL
+    highlight JISX0208Space term=underline ctermbg=LightCyan
+endf
+if has("syntax")
+    syntax on
+      augroup invisible
+      autocmd! invisible
+      autocmd BufNew,BufRead * call JISX0208SpaceHilight()
+    augroup END
+endif
+
+set list listchars=tab:\¦\ 
