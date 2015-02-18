@@ -33,6 +33,9 @@ imap <silent> <C-n> <ESC>:update<CR>:bn<CR>
 vmap <silent> <C-n> <ESC>:update<CR>:bn<CR>
 cmap <silent> <C-n> <ESC>:update<CR>:bn<CR>
 
+set list
+set listchars=tab:>-,trail:-,extends:>,precedes:<,nbsp:%
+
 "---------------------------
 " Start Neobundle Settings.
 "---------------------------
@@ -58,6 +61,10 @@ NeoBundle 'tomasr/molokai'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'ujihisa/unite-colorscheme'
 
+NeoBundle 'tpope/vim-endwise'
+NeoBundle 'tomtom/tcomment_vim'
+NeoBundle 'bronson/vim-trailing-whitespace'
+
 call neobundle#end()
 
 " Required:
@@ -69,7 +76,7 @@ NeoBundleCheck
 " End Neobundle Settings.
 "-------------------------
 
-colorscheme slate
+"colorscheme default
 if &term =~ "xterm-256color" || "screen-256color"
 	set t_Co=256
 	set t_Sf=[3%dm
@@ -80,5 +87,5 @@ elseif &term =~ "xterm-color"
 	set t_Sb=[4%dm
 endif
 
-syntax enable
-hi PmenuSel cterm=reverse ctermfg=33 ctermbg=222 gui=reverse guifg=#3399ff guibg=#f0e68c
+"syntax enable
+"hi PmenuSel cterm=reverse ctermfg=33 ctermbg=222 gui=reverse guifg=#3399ff guibg=#f0e68c
