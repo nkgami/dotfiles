@@ -33,6 +33,8 @@ imap <silent> <C-n> <ESC>:update<CR>:bn<CR>
 vmap <silent> <C-n> <ESC>:update<CR>:bn<CR>
 cmap <silent> <C-n> <ESC>:update<CR>:bn<CR>
 
+set background=dark
+
 "set colorcolumn=80
 "set list
 "set listchars=tab:>-,trail:-,extends:>,precedes:<,nbsp:%
