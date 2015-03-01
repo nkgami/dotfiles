@@ -3,7 +3,8 @@ set backspace=start,eol,indent
 set whichwrap=b,s,[,],<,>,~
 set mouse=
 set cindent
-set fileencodings=utf-8,iso-2022-jp,euc-jp,cp932,ucs-bom,default,latin1
+set encoding=utf-8
+set fileencodings=iso-2022-jp,euc-jp,cp932,ucs-bom,default,latin1,utf-8
 set fileformats=unix,dos,mac
 set tabstop=2
 set shiftwidth=2
